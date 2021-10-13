@@ -2,6 +2,7 @@ import { createConnection } from "typeorm";
 import * as dotenv from "dotenv";
 import Client from "./entities/Client";
 import Banker from "./entities/Banker";
+import Transaction from "./entities/Transaction";
 
 // Enable dotenv
 dotenv.config();
@@ -15,13 +16,13 @@ const connectDB = async () => {
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       synchronize: process.env.DB_SYNCHRONIZE === "true",
-      entities: [Client, Banker]
+      entities: [Client, Banker, Transaction],
     });
     console.log("Database connected successfully");
   } catch (error) {
     console.log(error);
-    throw new Error("Failed to connect the DB")
+    throw new Error("Failed to connect the DB");
   }
-}
+};
 
 connectDB();
