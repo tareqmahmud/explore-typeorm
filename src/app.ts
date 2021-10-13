@@ -5,8 +5,7 @@ import Client from "./entities/Client";
 // Enable dotenv
 dotenv.config();
 
-
-const db = async () => {
+const connectDB = async () => {
   try {
     await createConnection({
       type: "postgres",
@@ -24,4 +23,4 @@ const db = async () => {
   }
 }
 
-db();
+connectDB();
