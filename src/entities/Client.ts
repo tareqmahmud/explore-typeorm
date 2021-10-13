@@ -1,9 +1,4 @@
-import {
-  Column,
-  Entity,
-  OneToMany,
-  ManyToMany,
-} from "typeorm";
+import { Column, Entity, OneToMany, ManyToMany } from "typeorm";
 import Person from "./utils/Person";
 import Transaction from "./Transaction";
 import Banker from "./Banker";
@@ -12,7 +7,7 @@ import Banker from "./Banker";
 class Client extends Person {
   // number is integer
   // So use custom typeorm type called numeric -> It'll convert type to double/float
-  @Column({ type: "numeric" })
+  @Column({ type: "float" })
   balance: number;
 
   @Column({ default: true, name: "active" })
@@ -36,7 +31,7 @@ class Client extends Person {
   @OneToMany(() => Transaction, (transaction) => transaction.client)
   transactions: Transaction[];
 
-  @ManyToMany(() => Banker)
+  @ManyToMany(() => Banker, { cascade: true })
   bankers: Banker[];
 }
 

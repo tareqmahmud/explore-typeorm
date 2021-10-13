@@ -17,8 +17,8 @@ export enum TransactionTypes {
 
 @Entity("transaction")
 class Transaction extends BaseEntity {
-  @PrimaryColumn({ type: "uuid" })
-  id: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column({ type: "enum", enum: TransactionTypes })
   type: string;

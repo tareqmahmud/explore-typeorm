@@ -9,9 +9,9 @@ class Banker extends Person {
   })
   employee_number: number;
 
-  @ManyToMany(() => Client)
+  @ManyToMany(() => Client, { cascade: true })
   @JoinTable({
-    name: "bankers_client",
+    name: "bankers_clients",
     joinColumn: {
       name: "banker",
       referencedColumnName: "id",
