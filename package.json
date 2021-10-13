@@ -1,0 +1,17 @@
+{
+  "name": "explore-typeorm",
+  "version": "1.0.0",
+  "description": "Learn and practice basic to advance techniques about TypeOrm",
+  "main": "index.js",
+  "repository": "git@github.com:tareqmahmud/explore-typeorm.git",
+  "author": "MD Tareq Mahmud <tareqmahmud@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --watch '**/*.ts' --exec 'ts-node' src/app.ts"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  }
+}
