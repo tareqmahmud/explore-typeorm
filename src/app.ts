@@ -4,6 +4,8 @@ import * as dotenv from "dotenv";
 import Client from "./entities/Client";
 import Banker from "./entities/Banker";
 import Transaction from "./entities/Transaction";
+import { clientRouter } from "./routes/client-route";
+import { bankerRoute } from "./routes/banker-route";
 
 // Enable dotenv
 dotenv.config();
@@ -13,6 +15,10 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+
+// Connect routes
+app.use(clientRouter);
+app.use(bankerRoute);
 
 // Connect DB
 const connectDB = async () => {
